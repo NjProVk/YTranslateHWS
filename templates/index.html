@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}" defer></script>
+</head>
+<body>
+    <div class="container">
+        <select name="language" id="lang">
+            <option value="ru">RU-EN</option>
+            <option value="en">EN-RU</option>
+        </select>
+        <textarea class="original" maxlength="500" oninput="debouncedTranslate()" wrap="hard"
+                  cols="30" rows="10" placeholder="Введите текст для перевода"></textarea>
+        <div class="text-and-loader">
+            <textarea maxlength="500" readonly cols="30" rows="10" id="translate" wrap="hard"
+                    placeholder="Тут будет Ваш перевод"></textarea>
+            <span class="loader"></span>
+            <div class="overlay"></div>
+        </div>
+    </div>
+</body>
+</html>
+
